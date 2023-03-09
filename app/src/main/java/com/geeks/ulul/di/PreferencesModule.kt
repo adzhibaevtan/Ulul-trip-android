@@ -3,6 +3,7 @@ package com.geeks.ulul.di
 import android.content.Context
 import android.content.SharedPreferences
 import com.geeks.ulul.data.local.pref.PreferencesKeys.ULUL_TRIP_SHARED_PREFERENCES
+import com.geeks.ulul.data.local.pref.UserPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,4 +22,9 @@ object PreferencesModule {
             ULUL_TRIP_SHARED_PREFERENCES,
             Context.MODE_PRIVATE
         )
+
+    @Singleton
+    @Provides
+    fun generateUserPreferences(sharedPreferences: SharedPreferences) =
+        UserPreferences(sharedPreferences)
 }

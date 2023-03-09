@@ -1,4 +1,4 @@
-package com.geeks.ulul.remote.interceptor
+package com.geeks.ulul.remote
 
 import com.geeks.ulul_trip_android.BuildConfig
 import okhttp3.OkHttpClient
