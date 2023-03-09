@@ -1,7 +1,8 @@
-package com.geeks.ulul
+package com.geeks.ulul.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.geeks.ulul_trip_android.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
