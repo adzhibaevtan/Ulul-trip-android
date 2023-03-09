@@ -6,6 +6,21 @@
     tools:ignore="InvalidNavigation">
 
     <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.geeks.ulul.ui.fragment.splash.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            app:popUpToInclusive="true"
+            android:id="@+id/action_splashScreenFragment_to_mainFlowFragment"
+            app:destination="@id/mainFlowFragment" />
+        <action
+            app:popUpToInclusive="true"
+            android:id="@+id/action_splashScreenFragment_to_authAndRegFlowFragment"
+            app:destination="@id/authAndRegFlowFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/mainFlowFragment"
         android:name="com.geeks.ulul.ui.fragment.main.MainFlowFragment"
         android:label="fragment_main_flow"

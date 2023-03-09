@@ -25,9 +25,9 @@
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
-        app:boxStrokeColor="#0C73FE"
-        app:counterOverflowTextColor="#0C73FE"
-        app:hintTextColor="#0C73FE"
+        app:boxStrokeColor="@color/main_blue"
+        app:counterOverflowTextColor="@color/main_blue"
+        app:hintTextColor="@color/main_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -53,9 +53,9 @@
         app:boxCornerRadiusBottomStart="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
-        app:boxStrokeColor="#0C73FE"
+        app:boxStrokeColor="@color/main_blue"
         app:layout_constraintTop_toBottomOf="@id/til_email"
-        app:placeholderTextColor="#0C73FE">
+        app:placeholderTextColor="@color/main_blue">
 
         <EditText
             android:id="@+id/et_password"
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#0C73FE"
+        android:backgroundTint="@color/main_blue"
         android:text="Войти"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="#B5C0CD"
         android:text="Зарегистрироваться"
-        android:textColor="#0C73FE"
+        android:textColor="@color/main_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_sign_up" />
