@@ -30,20 +30,20 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
         super.onViewCreated(view, savedInstanceState)
         initialize()
         assembleViews()
-        constructListeners()
-        establishRequest()
-        launchObservers()
+        initListeners()
+        initRequest()
+        initSubscribers()
     }
 
     protected open fun initialize() {}
 
     protected open fun assembleViews() {}
 
-    protected open fun constructListeners() {}
+    protected open fun initListeners() {}
 
-    protected open fun establishRequest() {}
+    protected open fun initRequest() {}
 
-    protected open fun launchObservers() {}
+    protected open fun initSubscribers() {}
 
     protected fun <T : Any> Flow<PagingData<T>>.spectatePaging(
         lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
@@ -120,6 +120,28 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
                     displayLoader(true)
                 } else {
                     displayLoader(false)
+                }
+            }
+        }
+    }
+
+    protected fun <T> StateFlow<UIState<T>>.collectUIState(
+        uiState: ((UIState<T>) -> Unit)? = null,
+        onLoading: (() -> Unit?)? = null,
+        onSuccess: (data: T) -> Unit,
+    ) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                this@collectUIState.collect { state ->
+                    uiState?.invoke(state)
+                    when (state) {
+                        is UIState.Idle -> {}
+                        is UIState.Error -> {}
+                        is UIState.Loading -> {}
+                        is UIState.Success -> {
+                            onSuccess(state.data)
+                        }
+                    }
                 }
             }
         }

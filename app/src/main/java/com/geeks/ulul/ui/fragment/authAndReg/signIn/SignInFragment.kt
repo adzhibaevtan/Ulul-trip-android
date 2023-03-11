@@ -22,7 +22,7 @@ class SignInFragment :
     @Inject
     lateinit var userPreferences: UserPreferences
 
-    override fun constructListeners() {
+    override fun initListeners() {
         binding.btnSignIn.setOnClickListener {
             viewModel.signIn(
                 binding.etEmail.text.toString(),
@@ -34,7 +34,7 @@ class SignInFragment :
         }
     }
 
-    override fun launchObservers() {
+    override fun initSubscribers() {
         viewModel.signInState.spectateUiState(success = {
             userPreferences.accessToken = getAuthenticationToken(it.tokens, true)
             userPreferences.refreshToken = getAuthenticationToken(it.tokens, false)

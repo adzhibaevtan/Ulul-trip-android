@@ -20,7 +20,7 @@ class ProfileFragment :
      @Inject
     lateinit var userPreferences: UserPreferences
 
-    override fun constructListeners() {
+    override fun initListeners() {
         binding.btnLogOut.setOnClickListener {
             userPreferences.accessToken = ""
             userPreferences.refreshToken = ""

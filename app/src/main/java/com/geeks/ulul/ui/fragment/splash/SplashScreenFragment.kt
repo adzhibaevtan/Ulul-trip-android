@@ -23,7 +23,7 @@ class SplashScreenFragment :
     @Inject
     lateinit var userPreferences: UserPreferences
 
-    override fun constructListeners() {
+    override fun initListeners() {
         val avd = AnimatedVectorDrawableCompat.create(requireContext(), R.drawable.ic_snail_anim)
 
         binding.logoAnim.setImageDrawable(avd)
