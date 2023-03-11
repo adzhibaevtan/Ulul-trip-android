@@ -1,8 +1,8 @@
-package com.geeks.ulul.remote.apiService
+package com.geeks.ulul.data.remote.apiService.auth
 
-import com.geeks.ulul.remote.dto.SignInDto
-import com.geeks.ulul.remote.dto.SignUpDto
-import com.geeks.ulul.remote.dto.SignInResultDto
+import com.geeks.ulul.data.remote.dto.SignInDto
+import com.geeks.ulul.data.remote.dto.SignUpDto
+import com.geeks.ulul.data.remote.dto.SignInResultDto
 import retrofit2.http.Body
 import retrofit2.http.POST
 

@@ -1,4 +1,4 @@
-package com.geeks.ulul.remote.interceptor
+package com.geeks.ulul.data.remote.interceptor
 
 
 import com.geeks.ulul.data.local.pref.UserPreferences

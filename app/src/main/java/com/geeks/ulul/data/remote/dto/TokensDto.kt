@@ -1,4 +1,4 @@
-package com.geeks.ulul.remote.dto
+package com.geeks.ulul.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 

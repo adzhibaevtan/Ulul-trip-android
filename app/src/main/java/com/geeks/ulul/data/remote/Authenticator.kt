@@ -1,9 +1,9 @@
-package com.geeks.ulul.remote
+package com.geeks.ulul.data.remote
 
 import com.geeks.ulul.data.local.pref.UserPreferences
+import com.geeks.ulul.data.remote.apiService.auth.RefreshAccessTokenApiService
+import com.geeks.ulul.data.remote.dto.RefreshTokenDto
 
-import com.geeks.ulul.remote.apiService.RefreshAccessTokenApiService
-import com.geeks.ulul.remote.dto.RefreshTokenDto
 import okhttp3.Request
 import okhttp3.Response
 import okhttp3.Route
