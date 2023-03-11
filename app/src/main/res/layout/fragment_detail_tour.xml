@@ -34,12 +34,93 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="120dp"
+            app:ci_drawable="@drawable/ic_selected_ci"
             app:ci_drawable_unselected="@drawable/ic_unselected_ci"
             app:ci_height="12dp"
-            app:ci_width="12dp"
             app:ci_margin="12dp"
-            app:ci_drawable="@drawable/ic_selected_ci"
+            app:ci_width="12dp"
             app:layout_constraintTop_toBottomOf="@id/vpImages" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/circleIndicator">
+
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="category"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvRegion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="region"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvComplexity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="complexity"
+                android:textColor="@color/teal_200"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="duration"
+                android:textColor="@color/purple_200"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="price"
+                android:textColor="@color/teal_700"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tvDeparture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="departure"
+                android:textColor="@color/purple_500"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/tvArrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="arrival"
+                android:textColor="@color/purple_500"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/tvGuide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="guide"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="description"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

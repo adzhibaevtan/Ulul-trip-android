@@ -44,6 +44,15 @@ class DetailTourFragment :
         with(binding) {
             tvTitle.text = model.title
             detailTourAdapter.addData(model.tour_images)
+            tvCategory.text = model.category.name
+            tvRegion.text = model.region.toString()
+            tvComplexity.text = model.complexity
+            tvDuration.text = model.duration
+            tvPrice.text = model.price.toString()
+            tvDeparture.text = model.date_departure
+            tvArrival.text = model.date_arrival
+            tvGuide.text = model.guide.get_initials
+            tvDescription.text = model.description
         }
     }
 }
