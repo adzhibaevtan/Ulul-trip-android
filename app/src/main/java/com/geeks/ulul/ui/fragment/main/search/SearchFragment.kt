@@ -20,8 +20,15 @@ class SearchFragment :
 
     override fun initListeners() {
         super.initListeners()
+        setDeparture()
         setComplexity()
         setCategory()
+    }
+
+    private fun setDeparture() {
+        binding.etDeparture.doAfterTextChanged {
+            filter.date_departure = it.toString()
+        }
     }
 
     private fun setComplexity() {
