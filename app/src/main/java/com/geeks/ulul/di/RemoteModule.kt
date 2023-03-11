@@ -3,6 +3,7 @@ package com.geeks.ulul.di
 import com.geeks.ulul.data.remote.NetworkClient
 import com.geeks.ulul.data.remote.apiService.tours.PagingApiService
 import com.geeks.ulul.data.remote.NetworkFastBuilder
+import com.geeks.ulul.data.remote.apiService.tours.ToursApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,4 +28,10 @@ object RemoteModule {
     fun generatePagingApiService(): PagingApiService =
         NetworkFastBuilder.provideRetrofit(NetworkFastBuilder.provideOkHttpClientBuilder().build())
             .create(PagingApiService::class.java)
+
+    @Singleton
+    @Provides
+    fun generateToursApiService(): ToursApiService =
+        NetworkFastBuilder.provideRetrofit(NetworkFastBuilder.provideOkHttpClientBuilder().build())
+            .create(ToursApiService::class.java)
 }
