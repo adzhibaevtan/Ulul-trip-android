@@ -141,7 +141,7 @@ class SearchFragment :
 
     private fun search() {
         binding.btnSearch.setOnClickListener {
-//            findNavController().navigate(R.id.toursFragment, bundleOf(KEY_FILTER to filter))
+//            findNavController().navigateSafely(R.id.toursFragment, bundleOf(KEY_FILTER to filter))
         }
     }
 
@@ -157,8 +157,8 @@ class SearchFragment :
 
     private fun onHintClick(tourSlug: String) {
         Toast.makeText(requireContext(), tourSlug, Toast.LENGTH_SHORT).show()
-//        findNavController().navigateSafely(R.id.)
-//        findNavController().navigate(R.id.detailFragment, bundleOf(KEY_SlUG to tourSlug))
+//        findNavController().navigateSafely(R.id.action_searchFragment_to_detailTourFragment ,
+//            bundleOf(KEY_SlUG to tourSlug))
     }
 
     companion object {
