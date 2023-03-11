@@ -20,7 +20,25 @@ class SearchFragment :
 
     override fun initListeners() {
         super.initListeners()
+        setComplexity()
         setCategory()
+    }
+
+    private fun setComplexity() {
+        with(binding) {
+            btnEasy.setOnClickListener {
+                filter.complexity = "Easy"
+            }
+            btnMedium.setOnClickListener {
+                filter.complexity = "Medium"
+            }
+            btnHard.setOnClickListener {
+                filter.complexity = "Hard"
+            }
+            btnExtra.setOnClickListener {
+                filter.complexity = "Extra"
+            }
+        }
     }
 
     private fun setCategory() {
