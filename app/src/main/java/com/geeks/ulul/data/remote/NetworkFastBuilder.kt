@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 class NetworkFastBuilder {
     companion object {
         fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -29,5 +29,7 @@ class NetworkFastBuilder {
                 else -> HttpLoggingInterceptor.Level.NONE
             }
         )
+
+        private const val BASE_URL = "http://164.92.190.147:8880/"      //FIX BUILD CONFIG!!!
     }
 }

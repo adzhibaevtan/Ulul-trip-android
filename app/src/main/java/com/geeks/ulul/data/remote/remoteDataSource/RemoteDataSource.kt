@@ -7,4 +7,6 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor(private val apiService : ToursApiService) : BaseDataSource(){
 
     suspend fun getSlugs() = getResult { apiService.getSlugs() }
+
+    suspend fun getTourModelBySlug(slug: String) = getResult { apiService.getTourBySlug(slug) }
 }
