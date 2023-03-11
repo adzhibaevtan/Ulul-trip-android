@@ -1,7 +1,7 @@
-package com.geeks.ulul.remote.apiService
+package com.geeks.ulul.data.remote.apiService.auth
 
-import com.geeks.ulul.remote.dto.RefreshTokenDto
-import com.geeks.ulul.remote.dto.TokensDto
+import com.geeks.ulul.data.remote.dto.RefreshTokenDto
+import com.geeks.ulul.data.remote.dto.TokensDto
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST

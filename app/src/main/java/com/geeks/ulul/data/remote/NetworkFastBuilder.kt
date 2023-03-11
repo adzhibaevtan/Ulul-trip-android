@@ -1,6 +1,6 @@
-package com.geeks.ulul.remote
+package com.geeks.ulul.data.remote
 
-import com.geeks.ulul_trip_android.BuildConfig
+import androidx.viewbinding.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

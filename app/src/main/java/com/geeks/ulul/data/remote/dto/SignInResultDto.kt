@@ -1,4 +1,4 @@
-package com.geeks.ulul.remote.dto
+package com.geeks.ulul.data.remote.dto
 
 data class SignInResultDto(
     val email: String,

@@ -1,11 +1,11 @@
-package com.geeks.ulul.remote
+package com.geeks.ulul.data.remote
 
 
-import com.geeks.ulul.remote.NetworkFastBuilder.Companion.provideOkHttpClientBuilder
-import com.geeks.ulul.remote.NetworkFastBuilder.Companion.provideRetrofit
-import com.geeks.ulul.remote.apiService.AuthenticationApiService
-import com.geeks.ulul.remote.apiService.RefreshAccessTokenApiService
-import com.geeks.ulul.remote.interceptor.AuthenticationInterceptor
+import com.geeks.ulul.data.remote.apiService.auth.AuthenticationApiService
+import com.geeks.ulul.data.remote.apiService.auth.RefreshAccessTokenApiService
+import com.geeks.ulul.data.remote.interceptor.AuthenticationInterceptor
+import com.geeks.ulul.data.remote.NetworkFastBuilder.Companion.provideOkHttpClientBuilder
+import com.geeks.ulul.data.remote.NetworkFastBuilder.Companion.provideRetrofit
 import retrofit2.Retrofit
 import javax.inject.Inject
 

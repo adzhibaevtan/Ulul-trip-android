@@ -1,9 +1,9 @@
 package com.geeks.ulul.repository
 
 import com.geeks.ulul.data.base.BaseRepository
-import com.geeks.ulul.remote.apiService.AuthenticationApiService
-import com.geeks.ulul.remote.dto.SignInDto
-import com.geeks.ulul.remote.dto.SignUpDto
+import com.geeks.ulul.data.remote.apiService.auth.AuthenticationApiService
+import com.geeks.ulul.data.remote.dto.SignInDto
+import com.geeks.ulul.data.remote.dto.SignUpDto
 import javax.inject.Inject
 
 class AuthenticationRepository @Inject constructor(
