@@ -20,10 +20,25 @@ class SearchFragment :
 
     override fun initListeners() {
         super.initListeners()
+        setDuration()
         setPrice()
         setDeparture()
         setComplexity()
         setCategory()
+    }
+
+    private fun setDuration() {
+        with(binding) {
+            btnOneDay.setOnClickListener {
+                filter.duration = "1"
+            }
+            btnThreeDay.setOnClickListener {
+                filter.duration = "3"
+            }
+            btnSevenDay.setOnClickListener {
+                filter.duration = "7"
+            }
+        }
     }
 
     private fun setPrice() {
