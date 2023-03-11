@@ -20,9 +20,18 @@ class SearchFragment :
 
     override fun initListeners() {
         super.initListeners()
+        setPrice()
         setDeparture()
         setComplexity()
         setCategory()
+    }
+
+    private fun setPrice() {
+        with(binding) {
+            etMaxPrice.doAfterTextChanged {
+                filter.price_max = it.toString()
+            }
+        }
     }
 
     private fun setDeparture() {
