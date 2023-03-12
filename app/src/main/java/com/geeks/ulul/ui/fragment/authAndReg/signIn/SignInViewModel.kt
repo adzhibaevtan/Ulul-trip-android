@@ -15,6 +15,6 @@ class SignInViewModel @Inject constructor(
     private val _signInState = mutableUiStateFlow<SignInResultDto>()
     val signInState = _signInState.asStateFlow()
 
-    fun signIn(email: String, password: String) =
-        authenticationRepository.signIn(email, password).gatherRequest(_signInState)
+    fun signIn(username: String, password: String) =
+        authenticationRepository.signIn(username, password).gatherRequest(_signInState)
 }
