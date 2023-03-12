@@ -11,16 +11,16 @@ class AuthenticationRepository @Inject constructor(
 ) : BaseRepository() {
 
     fun signUp(
-        first_name: String,
-        last_name: String,
+        name: String,
+        username: String,
         email: String,
         password: String,
         password_again: String
     ) = makeNetworkRequest {
         authenticationApiService.signUp(
             SignUpDto(
-                first_name,
-                last_name,
+                name,
+                username,
                 email,
                 password,
                 password_again

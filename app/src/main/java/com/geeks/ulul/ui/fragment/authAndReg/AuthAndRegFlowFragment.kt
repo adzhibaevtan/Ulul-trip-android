@@ -12,7 +12,7 @@ class AuthAndRegFlowFragment :
     override fun setupNavigation(navController: NavController) {
         super.setupNavigation(navController)
 
-        callback = object : OnBackPressedCallback(true /* enabled by default */) {
+        callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 requireActivity().finish()
             }
