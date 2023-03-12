@@ -1,6 +1,7 @@
 package com.geeks.ulul.ui.fragment.main.detailTour
 
 import android.content.Intent
+import android.net.Uri
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geeks.ulul.core.base.BaseFragment
@@ -37,6 +38,7 @@ class DetailTourFragment :
     override fun initListeners() {
         super.initListeners()
         share()
+        reserve()
     }
 
     private fun getModel() {
@@ -72,6 +74,13 @@ class DetailTourFragment :
             ivShare.setOnClickListener {
                 startActivity(Intent().share(tvTitle.text.toString()))
             }
+        }
+    }
+
+    private fun reserve() {
+        binding.btnReserve.setOnClickListener {
+            val telegramBot = Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/BotFather"))
+            startActivity(telegramBot)
         }
     }
 }
