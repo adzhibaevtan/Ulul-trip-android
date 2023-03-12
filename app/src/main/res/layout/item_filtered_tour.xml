@@ -2,9 +2,9 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
+    android:layout_height="200dp"
     android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="20dp"
     app:cardCornerRadius="10dp"
     app:strokeColor="@color/blue_gray">
 
@@ -12,40 +12,103 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
         <com.google.android.material.textview.MaterialTextView
-            android:textColor="@color/dark_gray"
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:textSize="18sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:paddingHorizontal="4dp"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/ivLocationIcon"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReviews"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="@string/location_icon"
-            android:src="@drawable/ic_location"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bg_item_filtered_tour"
+            android:backgroundTint="@color/green"
+            android:maxLines="1"
+            android:paddingHorizontal="4dp"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@id/tvTitle"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_item_filtered_tour"
+            android:backgroundTint="@color/white2"
+            android:orientation="vertical"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:background="@drawable/bg_item_filtered_tour"
+                android:maxLines="1"
+                android:textColor="@color/dark_gray"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </LinearLayout>
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvRegion"
-            android:textColor="@color/gray"
-            android:layout_marginStart="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/ivLocationIcon"
-            app:layout_constraintStart_toEndOf="@id/ivLocationIcon"
-            app:layout_constraintBottom_toBottomOf="@id/ivLocationIcon" />
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_item_filtered_tour"
+            android:backgroundTint="@color/gray"
+            android:maxLines="1"
+            android:paddingHorizontal="4dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/tvCategory"
+            app:layout_constraintStart_toStartOf="@id/tvCategory" />
 
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_item_filtered_tour"
+            android:backgroundTint="@color/gray"
+            android:maxLines="1"
+            android:paddingHorizontal="4dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
