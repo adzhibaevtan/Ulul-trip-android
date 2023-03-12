@@ -3,7 +3,7 @@ package com.geeks.ulul.data.base
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.example.ulultripfiltration.core.network.paging.BasePagingSource
+import com.geeks.ulul.core.network.paging.BasePagingSource
 import com.geeks.ulul.core.network.paging.DataMapper
 import com.geeks.ulul.core.network.result.Resource
 import com.geeks.ulul.data.util.Either

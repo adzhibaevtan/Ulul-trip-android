@@ -1,4 +1,4 @@
-package com.example.ulultripfiltration.core.network.paging
+package com.geeks.ulul.core.network.paging
 
 import androidx.recyclerview.widget.DiffUtil
 

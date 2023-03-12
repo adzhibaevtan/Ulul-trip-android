@@ -1,8 +1,7 @@
-package com.example.ulultripfiltration.core.network.paging
+package com.geeks.ulul.core.network.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.geeks.ulul.core.network.paging.DataMapper
 import retrofit2.Response
 
 abstract class BasePagingSource<ResponseModel : DataMapper<ResultModel>, ResultModel : Any>(

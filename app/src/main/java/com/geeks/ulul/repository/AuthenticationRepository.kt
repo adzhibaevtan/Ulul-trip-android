@@ -28,7 +28,7 @@ class AuthenticationRepository @Inject constructor(
         )
     }
 
-    fun signIn(email: String, password: String) = makeNetworkRequest {
-        authenticationApiService.login(SignInDto(email, password))
+    fun signIn(username: String, password: String) = makeNetworkRequest {
+        authenticationApiService.login(SignInDto(username, password))
     }
 }
