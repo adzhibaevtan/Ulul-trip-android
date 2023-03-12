@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
-        navGraph.setStartDestination(R.id.splashScreenFragment)
+        navGraph.setStartDestination(R.id.mainFlowFragment)
         navController.graph = navGraph
     }
 }

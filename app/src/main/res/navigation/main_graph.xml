@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_searchFragment_to_detailTourFragment"
             app:destination="@id/detailTourFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_filteredToursFragment"
+            app:destination="@id/filteredToursFragment" />
     </fragment>
 
     <fragment
@@ -32,5 +35,14 @@
         android:name="com.geeks.ulul.ui.fragment.main.detailTour.DetailTourFragment"
         android:label="DetailTourFragment"
         tools:layout="@layout/fragment_detail_tour" />
+    <fragment
+        android:id="@+id/filteredToursFragment"
+        android:name="com.geeks.ulul.ui.fragment.main.filteredTours.FilteredToursFragment"
+        android:label="fragment_filtered_tours"
+        tools:layout="@layout/fragment_filtered_tours" >
+        <action
+            android:id="@+id/action_filteredToursFragment_to_detailTourFragment"
+            app:destination="@id/detailTourFragment" />
+    </fragment>
 
 </navigation>

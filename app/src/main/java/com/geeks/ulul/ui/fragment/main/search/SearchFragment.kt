@@ -7,7 +7,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geeks.ulul.core.base.BaseFragment
-import com.geeks.ulul.core.extention.navigateSafely
 import com.geeks.ulul.data.model.FilterModel
 import com.geeks.ulul.data.model.SlugModel
 import com.geeks.ulul.ui.fragment.main.search.adapter.HintAdapter
@@ -141,7 +140,7 @@ class SearchFragment :
 
     private fun search() {
         binding.btnSearch.setOnClickListener {
-//            findNavController().navigateSafely(R.id.toursFragment, bundleOf(KEY_FILTER to filter))
+            findNavController().navigate(R.id.filteredToursFragment, bundleOf(KEY_FILTER to filter))
         }
     }
 
@@ -157,8 +156,8 @@ class SearchFragment :
 
     private fun onHintClick(tourSlug: String) {
         Toast.makeText(requireContext(), tourSlug, Toast.LENGTH_SHORT).show()
-//        findNavController().navigateSafely(R.id.action_searchFragment_to_detailTourFragment ,
-//            bundleOf(KEY_SlUG to tourSlug))
+        findNavController().navigate(R.id.detailTourFragment ,
+            bundleOf(KEY_SlUG to tourSlug))
     }
 
     companion object {
