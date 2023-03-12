@@ -6,8 +6,7 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geeks.ulul.core.base.BaseFragment
 import com.geeks.ulul.data.model.TourModel
-import com.geeks.ulul.data.util.getRegions
-import com.geeks.ulul.data.util.share
+import com.geeks.ulul.data.util.*
 import com.geeks.ulul.ui.fragment.main.detailTour.adapter.DetailTourImagesAdapter
 import com.geeks.ulul.ui.fragment.main.filteredTours.FilteredToursFragment.Companion.KEY_DETAIL_TOUR
 import com.geeks.ulul.ui.fragment.main.search.SearchFragment.Companion.KEY_SlUG
@@ -27,7 +26,7 @@ class DetailTourFragment :
 
     override fun initialize() {
         super.initialize()
-        binding.vpImages.adapter = detailTourAdapter
+        initAdapter()
     }
 
     override fun assembleViews() {
@@ -39,6 +38,13 @@ class DetailTourFragment :
         super.initListeners()
         share()
         reserve()
+    }
+
+    private fun initAdapter() {
+        with(binding) {
+            vpImages.adapter = detailTourAdapter
+            circleIndicator.setViewPager(vpImages)
+        }
     }
 
     private fun getModel() {
@@ -56,16 +62,17 @@ class DetailTourFragment :
     private fun setData(model: TourModel) {
         with(binding) {
             tvTitle.text = model.title
-            detailTourAdapter.addData(model.tour_images)
             tvCategory.text = model.category.name
             tvRegion.text = model.region.getRegions()
             tvComplexity.text = model.complexity
-            tvDuration.text = model.duration
+            tvDuration.text = model.duration.getDuration()
             tvPrice.text = model.price.toString()
-            tvDeparture.text = model.date_departure
-            tvArrival.text = model.date_arrival
             tvGuide.text = model.guide.get_initials
             tvDescription.text = model.description
+
+            if (model.tour_images.isNotEmpty()) {
+                detailTourAdapter.addData(model.tour_images)
+            }
         }
     }
 
