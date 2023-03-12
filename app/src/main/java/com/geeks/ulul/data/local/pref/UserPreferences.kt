@@ -17,4 +17,8 @@ class UserPreferences @Inject constructor(
     var refreshToken: String?
         get() = sharedPreferences.getString(PreferencesKeys.REFRESH_TOKEN, "")
         set(value) = sharedPreferences.put(PreferencesKeys.REFRESH_TOKEN, value.toString())
+
+    var userID: String?
+        get() = sharedPreferences.getString(PreferencesKeys.USER_ID, "")
+        set(value) = sharedPreferences.put(PreferencesKeys.USER_ID, value.toString())
 }

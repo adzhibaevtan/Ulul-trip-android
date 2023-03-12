@@ -39,6 +39,7 @@ class SignInFragment :
             userPreferences.accessToken = getAuthenticationToken(it.tokens, true)
             userPreferences.refreshToken = getAuthenticationToken(it.tokens, false)
             userPreferences.isAuthenticated = true
+            userPreferences.userID = it.id
             activityNavController().navigateSafely(R.id.action_authAndRegFlowFragment_to_mainFlowFragment)
         }, error = {
             Toast.makeText(requireContext(), "ne ok", Toast.LENGTH_SHORT).show()
@@ -63,5 +64,9 @@ class SignInFragment :
                 .associate { (k, v) -> k to v }
             tokenMap["'refresh'"]?.removeSurrounding("'")
         }
+    }
+
+    private fun getUserId() {
+
     }
 }
