@@ -132,6 +132,11 @@
                 android:text="description"
                 android:textColor="@color/black" />
 
+            <Button
+                android:id="@+id/btnReserve"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reserve Tour"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
