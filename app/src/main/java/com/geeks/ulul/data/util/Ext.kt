@@ -1,5 +1,6 @@
 package com.geeks.ulul.data.util
 
+import android.content.Intent
 import com.geeks.ulul.data.model.FilterModel
 import com.geeks.ulul.data.model.Region
 
@@ -24,4 +25,13 @@ fun List<Region>.getRegions(): String {
         }
     }
     return result
+}
+
+fun Intent.share(text: String?): Intent? {
+    this.apply {
+        action = Intent.ACTION_SEND
+        putExtra(Intent.EXTRA_TEXT, text ?: "")
+        type = "text/plain"
+    }
+    return Intent.createChooser(this, null)
 }

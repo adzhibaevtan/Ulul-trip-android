@@ -1,10 +1,12 @@
 package com.geeks.ulul.ui.fragment.main.detailTour
 
+import android.content.Intent
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geeks.ulul.core.base.BaseFragment
 import com.geeks.ulul.data.model.TourModel
 import com.geeks.ulul.data.util.getRegions
+import com.geeks.ulul.data.util.share
 import com.geeks.ulul.ui.fragment.main.detailTour.adapter.DetailTourImagesAdapter
 import com.geeks.ulul.ui.fragment.main.filteredTours.FilteredToursFragment.Companion.KEY_DETAIL_TOUR
 import com.geeks.ulul.ui.fragment.main.search.SearchFragment.Companion.KEY_SlUG
@@ -32,6 +34,11 @@ class DetailTourFragment :
         getModel()
     }
 
+    override fun initListeners() {
+        super.initListeners()
+        share()
+    }
+
     private fun getModel() {
         if (arguments?.getSerializable(KEY_SlUG) != null) {
             viewModel.getTourBySlug(arguments?.getSerializable(KEY_SlUG) as String)
@@ -57,6 +64,14 @@ class DetailTourFragment :
             tvArrival.text = model.date_arrival
             tvGuide.text = model.guide.get_initials
             tvDescription.text = model.description
+        }
+    }
+
+    private fun share() {
+        with(binding) {
+            ivShare.setOnClickListener {
+                startActivity(Intent().share(tvTitle.text.toString()))
+            }
         }
     }
 }
