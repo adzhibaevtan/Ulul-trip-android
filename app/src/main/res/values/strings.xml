@@ -4,4 +4,16 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tour_image">tour image</string>
     <string name="location_icon">location icon</string>
+    <string name="region">ОБЛАСТЬ</string>
+    <string name="duration">ДЛИТЕЛЬНОСТЬ</string>
+    <string name="price">ЦЕНА</string>
+    <string name="som">СОМ</string>
+    <string name="complexity">СЛОЖНОСТЬ</string>
+    <string name="guide">ГИД</string>
+    <string name="reserve">Забронировать</string>
+    <string name="complexity_icon">complexity icon</string>
+    <string name="duration_icon">duration icon</string>
+    <string name="region_icon">region icon</string>
+    <string name="category_icon">category icon</string>
+    <string name="icon_share">icon share</string>
 </resources>

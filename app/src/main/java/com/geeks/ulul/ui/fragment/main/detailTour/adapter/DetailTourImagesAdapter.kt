@@ -3,11 +3,14 @@ package com.geeks.ulul.ui.fragment.main.detailTour.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.bumptech.glide.Glide
 import com.geeks.ulul.data.model.TourImage
+import com.geeks.ulul.data.util.correctUrl
+import com.geeks.ulul.data.util.load
 import com.geeks.ulul_trip_android.databinding.ItemDetailTourImageBinding
 
-class DetailTourImagesAdapter : RecyclerView.Adapter<DetailTourImagesAdapter.DetailTourImagesViewHolder>() {
+class DetailTourImagesAdapter : Adapter<DetailTourImagesAdapter.DetailTourImagesViewHolder>() {
 
     val data = arrayListOf<TourImage>()
 
@@ -36,15 +39,9 @@ class DetailTourImagesAdapter : RecyclerView.Adapter<DetailTourImagesAdapter.Det
 
     inner class DetailTourImagesViewHolder(private val binding: ItemDetailTourImageBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(url: TourImage) {
+        fun bind(model: TourImage) {
             with(binding) {
-                if (ivImage != null) {
-                    Glide.with(ivImage).load(url.images).into(ivImage)
-                }
-
-//                else {
-//                    Glide.with(binding.ivImage).load("https://img1.freepng.ru/20171220/uue/kyrgyzstan-flag-png-5a3a6c772563e6.8396222215137782951532.jpg").into(ivImage)
-//                }
+                ivImage.load(model.images.correctUrl())
             }
         }
     }

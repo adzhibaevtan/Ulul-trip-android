@@ -1,143 +1,312 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Title"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/ivShare"
-            app:layout_constraintTop_toTopOf="@id/tvTitle"
-            android:padding="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_share"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="20dp"
-            android:contentDescription="icon share" />
-
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vpImages"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topContainer"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+            android:layout_height="match_parent">
 
-        <me.relex.circleindicator.CircleIndicator3
-            android:id="@+id/circleIndicator"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="120dp"
-            app:ci_drawable="@drawable/ic_selected_ci"
-            app:ci_drawable_unselected="@drawable/ic_unselected_ci"
-            app:ci_height="12dp"
-            app:ci_margin="12dp"
-            app:ci_width="12dp"
-            app:layout_constraintTop_toBottomOf="@id/vpImages" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
+            <ImageView
+                android:id="@+id/ivShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/icon_share"
+                android:padding="4dp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpImages"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/circleIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="120dp"
+                app:ci_drawable="@drawable/ic_selected_ci"
+                app:ci_drawable_unselected="@drawable/ic_unselected_ci"
+                app:ci_height="12dp"
+                app:ci_margin="12dp"
+                app:ci_width="12dp"
+                app:layout_constraintTop_toBottomOf="@id/vpImages" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/stroke"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/circleIndicator">
+            android:paddingTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/topContainer">
 
-            <TextView
+            <View
+                android:id="@+id/viewCenter"
+                android:layout_width="1dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivCategoryIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_walking_tour"
+                app:layout_constraintStart_toStartOf="@id/tvCategory"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/category_icon" />
+
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="category"
-                android:textSize="20sp" />
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivCategoryIcon" />
 
-            <TextView
+
+            <ImageView
+                android:id="@+id/ivRegionIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:src="@drawable/ic_region"
+                app:layout_constraintStart_toStartOf="@id/tvCategory"
+                app:layout_constraintTop_toBottomOf="@id/tvCategory"
+                android:contentDescription="@string/region_icon" />
+
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvRegion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="region"
+                android:layout_marginTop="8dp"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvCategory"
+                app:layout_constraintTop_toBottomOf="@id/ivRegionIcon" />
 
-            <TextView
-                android:id="@+id/tvComplexity"
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="complexity"
-                android:textColor="@color/teal_200"
-                android:textSize="30sp" />
+                android:layout_marginStart="8dp"
+                android:text="@string/region"
+                android:textColor="@color/gray"
+                app:layout_constraintBottom_toBottomOf="@id/ivRegionIcon"
+                app:layout_constraintStart_toEndOf="@id/ivRegionIcon"
+                app:layout_constraintTop_toTopOf="@id/ivRegionIcon" />
 
-            <TextView
+
+            <ImageView
+                android:id="@+id/ivDurationIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:src="@drawable/ic_duration"
+                app:layout_constraintStart_toStartOf="@id/tvCategory"
+                app:layout_constraintTop_toBottomOf="@id/tvRegion"
+                android:contentDescription="@string/duration_icon" />
+
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvDuration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="duration"
-                android:textColor="@color/purple_200"
-                android:textSize="30sp" />
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvCategory"
+                app:layout_constraintTop_toBottomOf="@id/ivDurationIcon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/duration"
+                android:textColor="@color/gray"
+                app:layout_constraintBottom_toBottomOf="@id/ivDurationIcon"
+                app:layout_constraintStart_toEndOf="@id/ivDurationIcon"
+                app:layout_constraintTop_toTopOf="@id/ivDurationIcon" />
 
 
-            <TextView
+            <RatingBar
+                android:id="@+id/rtbRating"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                android:max="5"
+                android:progressTint="@color/yellow"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:secondaryProgressTint="@color/yellow"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/tvCategory"
+                app:layout_constraintStart_toStartOf="@id/viewCenter" />
+
+            <ImageView
+                android:id="@+id/ivComplexityIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:src="@drawable/ic_complexity"
+                app:layout_constraintStart_toStartOf="@id/viewCenter"
+                app:layout_constraintTop_toBottomOf="@id/rtbRating"
+                android:contentDescription="@string/complexity_icon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvComplexity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/viewCenter"
+                app:layout_constraintTop_toBottomOf="@id/ivComplexityIcon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/complexity"
+                android:textColor="@color/gray"
+                app:layout_constraintBottom_toBottomOf="@id/ivComplexityIcon"
+                app:layout_constraintStart_toEndOf="@id/ivComplexityIcon"
+                app:layout_constraintTop_toTopOf="@id/ivComplexityIcon" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/price"
+                android:textColor="@color/gray"
+                app:layout_constraintBottom_toTopOf="@id/tvPrice"
+                app:layout_constraintStart_toStartOf="@id/viewCenter" />
+
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="price"
-                android:textColor="@color/teal_700"
-                android:textSize="30sp" />
+                android:layout_marginTop="8dp"
+                android:textColor="@color/orange"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvDuration"
+                app:layout_constraintStart_toStartOf="@id/viewCenter" />
 
-            <TextView
-                android:id="@+id/tvDeparture"
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="departure"
-                android:textColor="@color/purple_500"
-                android:textSize="26sp" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/som"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvPrice"
+                app:layout_constraintStart_toEndOf="@id/tvPrice"
+                app:layout_constraintTop_toTopOf="@id/tvPrice" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/tvArrival"
+        <CalendarView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/stroke">
+
+        </CalendarView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/stroke">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civGuide"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="36dp"
+                android:src="@color/black"
+                app:civ_border_color="@color/blue_darker"
+                app:civ_border_width="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvGuideText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="arrival"
-                android:textColor="@color/purple_500"
-                android:textSize="26sp" />
+                android:layout_marginStart="8dp"
+                android:text="@string/guide"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/civGuide"
+                app:layout_constraintTop_toTopOf="@id/civGuide" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvGuide"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:text="guide"
-                android:textSize="16sp" />
+                android:textColor="@color/gray"
+                app:layout_constraintStart_toStartOf="@id/tvGuideText"
+                app:layout_constraintTop_toBottomOf="@id/tvGuideText" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvDescription"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="description"
-                android:textColor="@color/black" />
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/civGuide" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnReserve"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reserve Tour"/>
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="36dp"
+                android:backgroundTint="@color/orange"
+                android:text="@string/reserve"
+                app:cornerRadius="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription"
+                app:rippleColor="@color/white" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 </androidx.core.widget.NestedScrollView>
