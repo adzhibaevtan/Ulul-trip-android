@@ -81,10 +81,10 @@
                 android:id="@+id/ivCategoryIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/category_icon"
                 android:src="@drawable/ic_walking_tour"
                 app:layout_constraintStart_toStartOf="@id/tvCategory"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/category_icon" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvCategory"
@@ -103,10 +103,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
+                android:contentDescription="@string/region_icon"
                 android:src="@drawable/ic_region"
                 app:layout_constraintStart_toStartOf="@id/tvCategory"
-                app:layout_constraintTop_toBottomOf="@id/tvCategory"
-                android:contentDescription="@string/region_icon" />
+                app:layout_constraintTop_toBottomOf="@id/tvCategory" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvRegion"
@@ -134,10 +134,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
+                android:contentDescription="@string/duration_icon"
                 android:src="@drawable/ic_duration"
                 app:layout_constraintStart_toStartOf="@id/tvCategory"
-                app:layout_constraintTop_toBottomOf="@id/tvRegion"
-                android:contentDescription="@string/duration_icon" />
+                app:layout_constraintTop_toBottomOf="@id/tvRegion" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvDuration"
@@ -181,10 +181,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
+                android:contentDescription="@string/complexity_icon"
                 android:src="@drawable/ic_complexity"
                 app:layout_constraintStart_toStartOf="@id/viewCenter"
-                app:layout_constraintTop_toBottomOf="@id/rtbRating"
-                android:contentDescription="@string/complexity_icon" />
+                app:layout_constraintTop_toBottomOf="@id/rtbRating" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvComplexity"
@@ -294,6 +294,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/civGuide" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnReserve"
                 android:layout_width="match_parent"
@@ -303,10 +309,9 @@
                 android:backgroundTint="@color/orange"
                 android:text="@string/reserve"
                 app:cornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@id/tvDescription"
+                app:layout_constraintTop_toBottomOf="@id/rv_reviews"
                 app:rippleColor="@color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

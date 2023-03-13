@@ -33,7 +33,12 @@ class SignUpFragment :
 
     override fun initSubscribers() {
         viewModel.signUpState.spectateUiState(success = {
-            Toast.makeText(requireContext(), "ok", Toast.LENGTH_SHORT).show()
+            findNavController().navigateSafely(R.id.action_signUpFragment_to_signInFragment)
+            Toast.makeText(
+                requireContext(),
+                "You need to verify your email now!",
+                Toast.LENGTH_SHORT
+            ).show()
         }, error = {
             Toast.makeText(requireContext(), "ne ok", Toast.LENGTH_SHORT).show()
 

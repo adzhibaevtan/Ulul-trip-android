@@ -1,9 +1,6 @@
 package com.geeks.ulul.di
 
 import com.geeks.ulul.data.remote.NetworkClient
-import com.geeks.ulul.data.remote.apiService.tours.PagingApiService
-import com.geeks.ulul.data.remote.NetworkFastBuilder
-import com.geeks.ulul.data.remote.apiService.tours.ToursApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,13 +22,16 @@ object RemoteModule {
 
     @Singleton
     @Provides
-    fun generatePagingApiService(): PagingApiService =
-        NetworkFastBuilder.provideRetrofit(NetworkFastBuilder.provideOkHttpClientBuilder().build())
-            .create(PagingApiService::class.java)
+    fun generateUserApiService(networkClient: NetworkClient) =
+        networkClient.generateUserApiService()
 
     @Singleton
     @Provides
-    fun generateToursApiService(): ToursApiService =
-        NetworkFastBuilder.provideRetrofit(NetworkFastBuilder.provideOkHttpClientBuilder().build())
-            .create(ToursApiService::class.java)
+    fun generatePagingApiService(networkClient: NetworkClient) =
+        networkClient.generatePagingApiService()
+
+    @Singleton
+    @Provides
+    fun generateToursApiService(networkClient: NetworkClient) =
+        networkClient.generateToursApiService()
 }

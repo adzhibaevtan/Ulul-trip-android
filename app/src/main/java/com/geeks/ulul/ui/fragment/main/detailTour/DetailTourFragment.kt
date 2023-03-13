@@ -6,9 +6,11 @@ import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geeks.ulul.core.base.BaseFragment
 import com.geeks.ulul.data.model.TourModel
+import com.geeks.ulul.data.remote.dto.dtoo.FavoriteTourDto
 import com.geeks.ulul.data.util.*
 import com.geeks.ulul.ui.fragment.main.detailTour.adapter.DetailTourImagesAdapter
 import com.geeks.ulul.ui.fragment.main.filteredTours.FilteredToursFragment.Companion.KEY_DETAIL_TOUR
+import com.geeks.ulul.ui.fragment.main.profile.favoriteTours.FavoriteToursFragment.Companion.KEY_DETAIL_TOUR_FAVORITE
 import com.geeks.ulul.ui.fragment.main.search.SearchFragment.Companion.KEY_SlUG
 import com.geeks.ulul_trip_android.R
 import com.geeks.ulul_trip_android.databinding.FragmentDetailTourBinding
@@ -53,9 +55,11 @@ class DetailTourFragment :
             viewModel.getTourBySlugState.collectUIState {
                 setData(it[0])
             }
-        } else {
+        } else if (arguments?.getSerializable(KEY_DETAIL_TOUR) != null) {
             model = arguments?.getSerializable(KEY_DETAIL_TOUR) as TourModel
             setData(model!!)
+        } else if (arguments?.getSerializable(KEY_DETAIL_TOUR_FAVORITE) != null) {
+            setData(arguments?.getSerializable(KEY_DETAIL_TOUR_FAVORITE) as FavoriteTourDto)
         }
     }
 
@@ -73,6 +77,23 @@ class DetailTourFragment :
             if (model.tour_images.isNotEmpty()) {
                 detailTourAdapter.addData(model.tour_images)
             }
+        }
+    }
+
+    private fun setData(model: FavoriteTourDto) {
+        with(binding) {
+            tvTitle.text = model.title
+//            tvCategory.text = model.category
+//            tvRegion.text = model.region.getRegions()
+            tvComplexity.text = model.complexity
+            tvDuration.text = model.duration.getDuration()
+            tvPrice.text = model.price.toString()
+//            tvGuide.text = model.guide.get_initials
+            tvDescription.text = model.description
+
+//            if (model.tour_images.isNotEmpty()) {
+//                detailTourAdapter.addData(model.tour_images)
+//            }
         }
     }
 

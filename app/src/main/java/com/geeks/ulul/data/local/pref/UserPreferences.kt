@@ -21,4 +21,6 @@ class UserPreferences @Inject constructor(
     var userID: String?
         get() = sharedPreferences.getString(PreferencesKeys.USER_ID, "")
         set(value) = sharedPreferences.put(PreferencesKeys.USER_ID, value.toString())
+
+    fun clearPreferences() = sharedPreferences.clear()
 }

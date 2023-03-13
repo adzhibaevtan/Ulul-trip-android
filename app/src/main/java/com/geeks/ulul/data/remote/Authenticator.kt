@@ -1,6 +1,7 @@
 package com.geeks.ulul.data.remote
 
 import com.geeks.ulul.data.local.pref.UserPreferences
+import com.geeks.ulul.data.remote.apiService.auth.AuthenticationApiService
 import com.geeks.ulul.data.remote.apiService.auth.RefreshAccessTokenApiService
 import com.geeks.ulul.data.remote.dto.RefreshTokenDto
 
@@ -11,6 +12,7 @@ import javax.inject.Inject
 
 class Authenticator @Inject constructor(
     private val refreshAccessTokenApiService: RefreshAccessTokenApiService,
+    private val authApiServices: AuthenticationApiService,
     private val userDataPreferencesManager: UserPreferences
 ) : okhttp3.Authenticator {
 
@@ -34,7 +36,6 @@ class Authenticator @Inject constructor(
             }
         }
     }
-
     private fun getRefreshedToken() =
         userDataPreferencesManager.refreshToken?.let {
             refreshAccessTokenApiService.refreshTokens(

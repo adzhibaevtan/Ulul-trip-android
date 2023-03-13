@@ -11,13 +11,15 @@
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen">
         <action
-            app:popUpToInclusive="true"
             android:id="@+id/action_splashScreenFragment_to_mainFlowFragment"
-            app:destination="@id/mainFlowFragment" />
+            app:destination="@id/mainFlowFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
         <action
-            app:popUpToInclusive="true"
             android:id="@+id/action_splashScreenFragment_to_authAndRegFlowFragment"
-            app:destination="@id/authAndRegFlowFragment" />
+            app:destination="@id/authAndRegFlowFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -36,7 +38,7 @@
         android:id="@+id/authAndRegFlowFragment"
         android:name="com.geeks.ulul.ui.fragment.authAndReg.AuthAndRegFlowFragment"
         android:label="fragment_auth_and_reg_flow"
-        tools:layout="@layout/fragment_auth_and_reg_flow"/>
+        tools:layout="@layout/fragment_auth_and_reg_flow" />
     <action
         android:id="@+id/action_authAndRegFlowFragment_to_mainFlowFragment"
         app:destination="@id/mainFlowFragment"

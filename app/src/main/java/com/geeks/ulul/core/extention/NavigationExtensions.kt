@@ -8,6 +8,10 @@ import androidx.navigation.findNavController
 import com.geeks.ulul_trip_android.R
 
 fun Fragment.activityNavController() = requireActivity().findNavController(R.id.nav_host_fragment)
+
+fun Fragment.flowNavController(@IdRes navHostFragmentId: Int) =
+    requireActivity().findNavController(navHostFragmentId)
+
 fun NavController.navigateSafely(@IdRes actionId: Int) {
     currentDestination?.getAction(actionId)?.let { navigate(actionId) }
 }
